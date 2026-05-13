@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+.uv/
+.python-version
+.ipynb_checkpoints/
+.DS_Store
+*.log
+.streamlit/secrets.toml
+.playwright-mcp/
+build_notebook.py
+streamlit-test.png
+pyproject.toml
+uv.lock
