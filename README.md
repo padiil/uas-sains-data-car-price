@@ -1,57 +1,40 @@
-# 🚗 UAS Sains Data — Prediksi Harga Mobil
+# Prediksi Harga Mobil
 
-Final Project Matakuliah **Sains Data** — sistem prediksi harga mobil berbasis Linear Regression dengan metode CRISP-DM. Dataset: `Car_sales.csv` (157 baris, 16 kolom).
+Aplikasi web prediksi harga mobil menggunakan Linear Regression. Dibangun sebagai final project matakuliah Sains Data.
 
-**Identitas**
-- Nama : Fadhil Gani
-- NIM  : 237006082
-- Prodi: Informatika — Universitas Siliwangi
+**Demo:** [uas-sains-data-car-price.streamlit.app](https://uas-sains-data-car-price.streamlit.app/)
 
-## 🔗 Demo
-
-- **Aplikasi Web (Streamlit Cloud):** _(akan diisi setelah deploy)_
-- **Google Colab Notebook:** _(akan diisi setelah upload ke Drive)_
-
-## 📦 Struktur Project
-
-| File | Deskripsi |
-|---|---|
-| `Final_Project_Sains_Data_Fadhil_237006082.ipynb` | Notebook utama — 11 langkah CRISP-DM (Load → EDA → Modeling → Evaluasi → Deploy) |
-| `app.py` | Streamlit UI sesuai wireframe PDF (form input + card hasil) |
-| `model_harga_mobil.pkl` | Pickle berisi model + LabelEncoders + metrik |
-| `Car_sales.csv` | Dataset sumber |
-| `requirements.txt` | Dependensi untuk Streamlit Cloud |
-
-## 📊 Hasil Model
-
-| Metrik | Nilai |
-|---|---|
-| R² Score | 0.7952 |
-| RMSE | 6.64 ribu USD |
-| MAE | 4.26 ribu USD |
-
-Fitur prediksi (10): Manufacturer, Vehicle_type, Engine_size, Horsepower, Wheelbase, Width, Length, Curb_weight, Fuel_capacity, Fuel_efficiency.
-
-## 🚀 Run Lokal
+## Cara Menjalankan
 
 ```bash
+git clone https://github.com/padiil/uas-sains-data-car-price.git
+cd uas-sains-data-car-price
 pip install -r requirements.txt
 streamlit run app.py
 ```
 
 Buka <http://localhost:8501>.
 
-## ☁️ Deploy ke Streamlit Cloud
+## Isi Repository
 
-1. Push repo ini ke GitHub (public).
-2. Buka <https://share.streamlit.io> → **New app**.
-3. Pilih repo `uas-sains-data-car-price` → Main file: `app.py` → Deploy.
-4. URL aplikasi akan tersedia ~2-3 menit kemudian.
+- `app.py` — aplikasi Streamlit
+- `Final_Project_Sains_Data_Fadhil_237006082.ipynb` — notebook analisis (CRISP-DM)
+- `model_harga_mobil.pkl` — model terlatih + encoder + metadata
+- `Car_sales.csv` — dataset (157 baris, 16 kolom)
+- `requirements.txt` — daftar dependency
 
-## 📁 Dataset
+## Dataset
 
-`Car_sales.csv` berisi data penjualan mobil dengan atribut: manufacturer, model, sales, harga, spesifikasi teknis (engine, horsepower, dimensi), dan efisiensi BBM.
+Sumber: data penjualan mobil dengan atribut pabrikan, model, harga, dimensi, spesifikasi mesin, dan efisiensi bahan bakar.
+
+## Model
+
+Linear Regression dengan 10 fitur prediktor. Performa pada data uji:
+
+- R² = 0.7952
+- RMSE = 6.64 ribu USD
+- MAE = 4.26 ribu USD
 
 ---
 
-**🎓 Universitas Siliwangi — Informatika ISI — 2026**
+Fadhil Gani — 237006082 — Universitas Siliwangi

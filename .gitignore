@@ -7,9 +7,14 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 *.log
+*.pdf
 .streamlit/secrets.toml
 .playwright-mcp/
 build_notebook.py
+build_pdf.py
+rewrite_notebook.py
+Dokumentasi_Proyek.md
 streamlit-test.png
+streamlit-cloud-live.png
 pyproject.toml
 uv.lock
