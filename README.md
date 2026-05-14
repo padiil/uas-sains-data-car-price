@@ -35,6 +35,20 @@ Linear Regression dengan 10 fitur prediktor. Performa pada data uji:
 - RMSE = 6.64 ribu USD
 - MAE = 4.26 ribu USD
 
+## Penyimpanan Model
+
+Model dan seluruh komponen pendukungnya disimpan dalam berkas `model_harga_mobil.pkl` menggunakan `joblib` (wrapper pickle yang dioptimalkan untuk array NumPy). Berkas tersebut berbentuk `dict` Python berisi lima komponen:
+
+| Kunci | Isi |
+|---|---|
+| `model` | Object `LinearRegression` yang sudah dilatih (intercept dan koefisien tiap fitur) |
+| `encoders` | `LabelEncoder` untuk kolom `Manufacturer` dan `Vehicle_type` |
+| `fitur` | Daftar 10 nama fitur prediktor (urutan harus dipertahankan saat inference) |
+| `metrik` | Nilai RMSE, MAE, dan R-squared hasil evaluasi |
+| `feature_defaults` | Nilai rata-rata tiap kolom numerik untuk default form input |
+
+Pendekatan ini memisahkan tahap pelatihan (di notebook) dari tahap prediksi (di aplikasi Streamlit). Aplikasi memuat artefak sekali melalui `joblib.load`, tanpa perlu melatih ulang model maupun membentuk ulang encoder, sehingga waktu respons cepat dan pemetaan kategori konsisten dengan saat pelatihan.
+
 ---
 
 Fadhil Gani — 237006082 — Universitas Siliwangi
